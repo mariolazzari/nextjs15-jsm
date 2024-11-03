@@ -1,7 +1,7 @@
 "use client";
 
 export function Hello() {
-  console.log("ciao");
+  console.log("client component");
 
   return (
     <>

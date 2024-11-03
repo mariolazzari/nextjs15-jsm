@@ -1,11 +1,11 @@
 type UserPageProps = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-function UserPage({ params }: UserPageProps) {
-  const { id } = params;
+async function UserPage({ params }: UserPageProps) {
+  const { id } = await params;
 
   return <div>User Details {id}</div>;
 }
