@@ -1,6 +1,8 @@
+"use client";
+
 import { ErrorProps } from "@/types/ErrorProps";
 
-function GlobalError({ error }: ErrorProps) {
+function GlobalError({ error }: Omit<ErrorProps, "reset">) {
   return (
     <div>
       <h2>GlobalError</h2>
