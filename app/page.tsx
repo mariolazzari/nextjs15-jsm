@@ -1,3 +1,9 @@
+import { Hello } from "./components/hello";
+
 export default function Home() {
-  return <h1 className="text-3xl">Ciao</h1>;
+  return (
+    <div className="text-3xl">
+      <Hello />
+    </div>
+  );
 }
