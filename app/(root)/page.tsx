@@ -1,6 +1,6 @@
 import { Hello } from "@/app/components/hello";
 
-function HomePage() {
+async function HomePage() {
   return (
     <div className="text-3xl">
       <Hello />
