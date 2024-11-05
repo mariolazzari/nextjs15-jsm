@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 async function HomePage() {
   return (
     <div className="text-3xl">
+      <h1 className="text-3xl">Home page</h1>
       <Hello />
     </div>
   );

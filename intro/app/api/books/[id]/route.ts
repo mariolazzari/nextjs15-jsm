@@ -1,13 +1,13 @@
 import { books } from "../db";
 
 type Context = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 export async function PATCH(req: Request, { params }: Context) {
-  const id = +params.id;
+  const id = +(await params).id;
   const book = await req.json();
 
   const idx = books.findIndex(b => b.id === id);
@@ -16,8 +16,8 @@ export async function PATCH(req: Request, { params }: Context) {
   return Response.json(books);
 }
 
-export function DELETE(req: Request, { params }: Context) {
-  const id = +params.id;
+export async function DELETE(req: Request, { params }: Context) {
+  const id = +(await params).id;
 
   const idx = books.findIndex(b => b.id === id);
   books.splice(idx, 1);
