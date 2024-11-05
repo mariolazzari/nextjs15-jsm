@@ -1,10 +1,9 @@
+import { ApiContext } from "@/types/ApiContext";
 import { books } from "../db";
 
-type Context = {
-  params: Promise<{
-    id: string;
-  }>;
-};
+type Context = ApiContext<{
+  id: string;
+}>;
 
 export async function PATCH(req: Request, { params }: Context) {
   const id = +(await params).id;
