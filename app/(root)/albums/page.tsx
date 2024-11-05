@@ -2,6 +2,14 @@ import { AlbumsClient } from "@/app/components/albums-client";
 import { AlbumsContainer } from "@/app/components/albums-container";
 import { fetchData } from "@/libs/api";
 import { Album } from "@/types/Album";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ALbums | NextJS 15",
+  description: "Server side data fetching by NextJS 15",
+};
+
+export const revalidate = 10;
 
 async function AlbumsPage() {
   console.time("server");
